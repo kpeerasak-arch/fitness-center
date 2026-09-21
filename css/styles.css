@@ -1,30 +1,484 @@
+/* ============================================================
+   ระบบบริหารจัดการศูนย์วิทยาศาสตร์การกีฬาและฟิตเนส
+   Main Stylesheet
+   ============================================================ */
+
 :root {
+
   --primary-color: #2563eb;
+
   --secondary-color: #1e40af;
+
   --bg-color: #f8fafc;
+
   --sidebar-width: 260px;
+
   --text-color: #1e293b;
+
   --border-color: #e2e8f0;
+
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Prompt', sans-serif; background-color: var(--bg-color); color: var(--text-color); display: flex; height: 100vh; overflow: hidden; }
 
-.app-container { display: flex; width: 100%; height: 100%; }
+/* ============================================================
+   RESET
+   ============================================================ */
 
-/* Sidebar */
-.sidebar { width: var(--sidebar-width); background: #ffffff; border-right: 1px solid var(--border-color); display: flex; flexDirection: column; height: 100%; overflow-y: auto; }
-.sidebar-header { padding: 20px; background: var(--primary-color); color: white; display: flex; justify-content: space-between; align-items: center; }
-.sidebar-header h2 { font-size: 18px; font-weight: 600; }
-.version { font-size: 12px; background: rgba(255,255,255,0.2); padding: 2px 6px; borderRadius: 4px; }
+* {
 
-.sidebar-menu { list-style: none; padding: 15px 10px; }
-.menu-header { font-size: 11px; text-transform: uppercase; color: #94a3b8; font-weight: 600; margin: 15px 0 5px 10px; }
-.sidebar-menu li a { display: flex; align-items: center; gap: 10px; padding: 10px 12px; color: #475569; text-decoration: none; border-radius: 6px; font-size: 14px; transition: 0.2s; }
-.sidebar-menu li a:hover, .sidebar-menu li a.active { background: #eff6ff; color: var(--primary-color); font-weight: 500; }
+  box-sizing: border-box;
 
-/* Main Content */
-.main-content { flex: 1; display: flex; flexDirection: column; height: 100%; overflow: hidden; }
-.topbar { height: 60px; background: white; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-.content-body { flex: 1; padding: 20px; overflow-y: auto; }
-.footer { padding: 10px 20px; text-align: center; font-size: 12px; color: #64748b; background: white; border-top: 1px solid var(--border-color); }
+  margin: 0;
+
+  padding: 0;
+
+}
+
+
+html,
+body {
+
+  width: 100%;
+
+  height: 100%;
+
+}
+
+
+body {
+
+  font-family:
+    'Prompt',
+    sans-serif;
+
+  background-color:
+    var(--bg-color);
+
+  color:
+    var(--text-color);
+
+  display: flex;
+
+  height: 100vh;
+
+  overflow: hidden;
+
+}
+
+
+/* ============================================================
+   APP CONTAINER
+   ============================================================ */
+
+.app-container {
+
+  display: flex;
+
+  width: 100%;
+
+  height: 100%;
+
+}
+
+
+/* ============================================================
+   SIDEBAR
+   ============================================================ */
+
+.sidebar {
+
+  width:
+    var(--sidebar-width);
+
+  min-width:
+    var(--sidebar-width);
+
+  background:
+    #ffffff;
+
+  border-right:
+    1px solid
+    var(--border-color);
+
+  display: flex;
+
+  flex-direction: column;
+
+  height: 100%;
+
+  overflow-y: auto;
+
+}
+
+
+.sidebar-header {
+
+  padding: 20px;
+
+  background:
+    var(--primary-color);
+
+  color: white;
+
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    center;
+
+}
+
+
+.sidebar-header h2 {
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+}
+
+
+.version {
+
+  font-size: 12px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.2
+    );
+
+  padding:
+    2px 6px;
+
+  border-radius: 4px;
+
+}
+
+
+.sidebar-menu {
+
+  list-style: none;
+
+  padding:
+    15px 10px;
+
+}
+
+
+.menu-header {
+
+  font-size: 11px;
+
+  text-transform:
+    uppercase;
+
+  color:
+    #94a3b8;
+
+  font-weight: 600;
+
+  margin:
+    15px 0 5px 10px;
+
+}
+
+
+.sidebar-menu li a {
+
+  display: flex;
+
+  align-items:
+    center;
+
+  gap: 10px;
+
+  padding:
+    10px 12px;
+
+  color:
+    #475569;
+
+  text-decoration:
+    none;
+
+  border-radius:
+    6px;
+
+  font-size:
+    14px;
+
+  transition:
+    0.2s;
+
+}
+
+
+.sidebar-menu li a:hover,
+.sidebar-menu li a.active {
+
+  background:
+    #eff6ff;
+
+  color:
+    var(--primary-color);
+
+  font-weight:
+    500;
+
+}
+
+
+/* ============================================================
+   MAIN CONTENT
+   ============================================================ */
+
+.main-content {
+
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  height: 100%;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+}
+
+
+.topbar {
+
+  height: 60px;
+
+  min-height: 60px;
+
+  background:
+    white;
+
+  border-bottom:
+    1px solid
+    var(--border-color);
+
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    center;
+
+  padding:
+    0 20px;
+
+}
+
+
+.toggle-sidebar {
+
+  cursor:
+    pointer;
+
+  font-size:
+    20px;
+
+}
+
+
+.user-profile {
+
+  font-size:
+    14px;
+
+}
+
+
+.content-body {
+
+  flex: 1;
+
+  padding:
+    20px;
+
+  overflow-y:
+    auto;
+
+}
+
+
+.footer {
+
+  padding:
+    10px 20px;
+
+  text-align:
+    center;
+
+  font-size:
+    12px;
+
+  color:
+    #64748b;
+
+  background:
+    white;
+
+  border-top:
+    1px solid
+    var(--border-color);
+
+}
+
+
+/* ============================================================
+   PAGE CARD
+   ============================================================ */
+
+.page-card {
+
+  background:
+    #ffffff;
+
+  border:
+    1px solid
+    var(--border-color);
+
+  border-radius:
+    12px;
+
+  padding:
+    24px;
+
+  box-shadow:
+    0 2px 8px
+    rgba(
+      0,
+      0,
+      0,
+      0.04
+    );
+
+}
+
+
+.page-card h2,
+.page-card h3 {
+
+  margin-bottom:
+    8px;
+
+}
+
+
+/* ============================================================
+   BUTTON
+   ============================================================ */
+
+.btn {
+
+  border:
+    none;
+
+  background:
+    var(--primary-color);
+
+  color:
+    #ffffff;
+
+  padding:
+    10px 18px;
+
+  border-radius:
+    8px;
+
+  cursor:
+    pointer;
+
+  font-family:
+    'Prompt',
+    sans-serif;
+
+  margin-top:
+    15px;
+
+}
+
+
+.btn:hover {
+
+  background:
+    var(--secondary-color);
+
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (
+  max-width: 900px
+) {
+
+  .sidebar {
+
+    width:
+      220px;
+
+    min-width:
+      220px;
+
+  }
+
+
+  .dashboard-grid {
+
+    grid-template-columns:
+      1fr !important;
+
+  }
+
+}
+
+
+@media (
+  max-width: 640px
+) {
+
+  .sidebar {
+
+    width:
+      0;
+
+    min-width:
+      0;
+
+    overflow:
+      hidden;
+
+  }
+
+
+  .content-body {
+
+    padding:
+      12px;
+
+  }
+
+
+  .topbar {
+
+    padding:
+      0 12px;
+
+  }
+
+}
