@@ -1,68 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ระบบบริหารจัดการศูนย์วิทยาศาสตร์การกีฬาและฟิตเนส</title>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1d4ed8">
+<title>404 · ระบบบริหารจัดการศูนย์วิทยาศาสตร์การกีฬาและฟิตเนส</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="app-container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <h2><i class="fa-solid fa-dumbbell"></i> Sport Science</h2>
-                <span class="version">V.1</span>
-            </div>
-            <ul class="sidebar-menu" id="sidebarMenu">
-                <li class="menu-header">ภาพรวม</li>
-                <li><a href="#dashboard" class="active" data-page="dashboard"><i class="fa-solid fa-chart-pie"></i> หน้าหลัก (Dashboard)</a></li>
-                
-                <li class="menu-header">ผู้รับบริการ</li>
-                <li><a href="#members-register" data-page="members-register"><i class="fa-solid fa-user-plus"></i> ลงทะเบียนผู้รับบริการ</a></li>
-                <li><a href="#members-list" data-page="members-list"><i class="fa-solid fa-users"></i> สมาชิกและการชำระเงิน</a></li>
-                <li><a href="#checkin" data-page="checkin"><i class="fa-solid fa-qrcode"></i> เช็กอินเข้าใช้บริการ</a></li>
-                <li><a href="#booking" data-page="booking"><i class="fa-solid fa-calendar-check"></i> จองคิว / ตารางนัดหมาย</a></li>
-
-                <li class="menu-header">วิทยาศาสตร์การกีฬา</li>
-                <li><a href="#physical-test" data-page="physical-test"><i class="fa-solid fa-heart-pulse"></i> บันทึกผลทดสอบสมรรถภาพ</a></li>
-                <li><a href="#program-builder" data-page="program-builder"><i class="fa-solid fa-list-check"></i> คลังโปรแกรมออกกำลังกาย</a></li>
-
-                <li class="menu-header">ทรัพยากรและบริการ</li>
-                <li><a href="#equipment" data-page="equipment"><i class="fa-solid fa-toolbox"></i> ยืม–คืนอุปกรณ์</a></li>
-                <li><a href="#onsite" data-page="onsite"><i class="fa-solid fa-truck-medical"></i> บริการนอกสถานที่</a></li>
-
-                <li class="menu-header">รายงานและระบบ</li>
-                <li><a href="#reports" data-page="reports"><i class="fa-solid fa-file-lines"></i> สรุปผลและรายงาน</a></li>
-                <li><a href="#settings" data-page="settings"><i class="fa-solid fa-gear"></i> ตั้งค่าระบบ</a></li>
-            </ul>
-        </aside>
-
-        <!-- Main Content Area -->
-        <main class="main-content">
-            <header class="topbar">
-                <div class="toggle-sidebar"><i class="fa-solid fa-bars"></i></div>
-                <div class="user-profile">
-                    <span id="adminStatusIndicator"><i class="fa-solid fa-user-shield"></i> ผู้ดูแลระบบ</span>
-                </div>
-            </header>
-            <div class="content-body" id="contentBody">
-                <!-- Dynamic Loaded Module View -->
-            </div>
-            <footer class="footer">
-                &copy; 2026 ผู้พัฒนา Dr.peerasak kingpoum - V.1
-            </footer>
-        </main>
+<div id="app">
+  <section id="loginView" class="login-view">
+    <div class="login-card">
+      <div class="brand-mark"><i class="fa-solid fa-dumbbell"></i></div>
+      <h1>ศูนย์วิทยาศาสตร์การกีฬาและฟิตเนส</h1>
+      <p class="muted">ระบบบริหารจัดการข้อมูล สมาชิก การเช็กอิน และการทดสอบสมรรถภาพ</p>
+      <form id="loginForm" class="form-stack">
+        <label>ชื่อผู้ใช้<input id="loginUsername" class="input" value="admin" autocomplete="username" required></label>
+        <label>รหัสผ่าน<input id="loginPassword" class="input" type="password" autocomplete="current-password" required></label>
+        <button class="btn primary full" type="submit"><i class="fa-solid fa-right-to-bracket"></i> เข้าสู่ระบบ</button>
+      </form>
+      <div id="loginMessage" class="message hidden"></div>
+      <p class="login-note">ครั้งแรก: admin / 1234 และควรเปลี่ยนรหัสผ่านทันที</p>
     </div>
+  </section>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="config.js"></script>
-    <script src="js/utils.js"></script>
-    <script src="js/api.js"></script>
-    <script src="js/app.js"></script>
+  <section id="mainView" class="hidden app-shell">
+    <aside id="sidebar" class="sidebar">
+      <div class="brand">
+        <div class="brand-icon"><i class="fa-solid fa-dumbbell"></i></div>
+        <div><strong>Sport Science</strong><small>Management Center</small></div>
+      </div>
+      <nav class="nav" id="nav">
+        <button data-page="dashboard" class="active"><i class="fa-solid fa-chart-pie"></i><span>Dashboard</span></button>
+        <div class="nav-title">ผู้รับบริการ</div>
+        <button data-page="members"><i class="fa-solid fa-users"></i><span>สมาชิก</span></button>
+        <button data-page="checkin"><i class="fa-solid fa-qrcode"></i><span>เช็กอิน</span></button>
+        <button data-page="bookings"><i class="fa-solid fa-calendar-check"></i><span>การจอง</span></button>
+        <div class="nav-title">วิทยาศาสตร์การกีฬา</div>
+        <button data-page="tests"><i class="fa-solid fa-heart-pulse"></i><span>ทดสอบสมรรถภาพ</span></button>
+        <button data-page="programs"><i class="fa-solid fa-list-check"></i><span>โปรแกรมออกกำลังกาย</span></button>
+        <button data-page="exercises"><i class="fa-solid fa-person-running"></i><span>คลังท่าออกกำลังกาย</span></button>
+        <div class="nav-title">ทรัพยากรและรายงาน</div>
+        <button data-page="equipment"><i class="fa-solid fa-toolbox"></i><span>อุปกรณ์</span></button>
+        <button data-page="reports"><i class="fa-solid fa-file-csv"></i><span>รายงาน / CSV</span></button>
+        <button data-page="settings"><i class="fa-solid fa-gear"></i><span>ตั้งค่า</span></button>
+      </nav>
+      <div class="sidebar-footer"><span id="userLabel">ผู้ดูแลระบบ</span><button id="logoutBtn" class="logout"><i class="fa-solid fa-right-from-bracket"></i> ออกจากระบบ</button></div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button id="menuBtn" class="icon-btn" aria-label="เมนู"><i class="fa-solid fa-bars"></i></button>
+        <div><h2 id="pageTitle">Dashboard</h2><span id="pageSub" class="muted">ภาพรวมการดำเนินงาน</span></div>
+        <div class="top-actions"><span id="connectionBadge" class="badge"><i class="fa-solid fa-circle"></i> Online</span></div>
+      </header>
+      <div id="content" class="content"></div>
+      <footer>© 2026 ศูนย์วิทยาศาสตร์การกีฬาและฟิตเนส · Version 2.0</footer>
+    </main>
+  </section>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://unpkg.com/html5-qrcode" defer></script>
+<script src="config.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
